@@ -3,7 +3,7 @@ import {
   findRegion,
   rawPathToToken
 } from 'node/markdown/plugins/snippet'
-import { expect } from 'vitest'
+import { expect } from '@voidzero-dev/vite-plus/test'
 
 const removeEmptyKeys = <T extends Record<string, unknown>>(obj: T) => {
   return Object.fromEntries(
