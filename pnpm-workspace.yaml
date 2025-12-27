@@ -11,7 +11,8 @@ onlyBuiltDependencies:
 
 overrides:
   ora>string-width: ^5
-  vite: ^8.0.0-0
+  vite: 'catalog:'
+  vitest: 'catalog:'
 
 patchedDependencies:
   '@types/markdown-it-attrs': patches/@types__markdown-it-attrs.patch
@@ -20,3 +21,14 @@ patchedDependencies:
   markdown-it-attrs@4.3.1: patches/markdown-it-attrs@4.3.1.patch
 
 shellEmulator: true
+catalog:
+  vite: npm:@voidzero-dev/vite-plus-core@latest
+  vitest: npm:@voidzero-dev/vite-plus-test@latest
+  '@voidzero-dev/vite-plus': latest
+peerDependencyRules:
+  allowAny:
+    - vite
+    - vitest
+  allowedVersions:
+    vite: '*'
+    vitest: '*'

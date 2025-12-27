@@ -2,6 +2,7 @@ name: CR
 
 env:
   PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD: '1'
+  VP_TOKEN: ${{ secrets.VP_TOKEN }}
 
 on:
   pull_request:
