@@ -105,9 +105,10 @@ export async function createMarkdownToVueRenderFn(
 
     const dynamicRoute = dynamicRoutes.get(file)
     const fileOrig = dynamicRoute?.[0] || file
+    const loaderPath = dynamicRoute?.[1]
     const transformPageData = [
       siteConfig?.transformPageData,
-      getPageDataTransformer(dynamicRoute?.[1]!)
+      loaderPath ? getPageDataTransformer(loaderPath) : undefined
     ].filter((fn) => fn != null)
 
     file = rewrites.get(file) || file

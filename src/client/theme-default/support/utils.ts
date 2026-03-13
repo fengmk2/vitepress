@@ -11,7 +11,8 @@ export function throttleAndDebounce(fn: () => void, delay: number): () => void {
 
     if (!called) {
       fn()
-      ;(called = true) && setTimeout(() => (called = false), delay)
+      called = true
+      setTimeout(() => (called = false), delay)
     } else timeoutId = setTimeout(fn, delay)
   }
 }

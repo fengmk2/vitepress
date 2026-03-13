@@ -115,6 +115,6 @@ export function usePrefetch() {
   watch(() => route.path, observeLinks)
 
   onUnmounted(() => {
-    observer && observer.disconnect()
+    if (observer) observer.disconnect()
   })
 }

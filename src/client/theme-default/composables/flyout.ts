@@ -16,7 +16,7 @@ export function useFlyout(options: UseFlyoutOptions) {
   const focus = ref(false)
 
   if (inBrowser) {
-    !active && activateFocusTracking()
+    if (!active) activateFocusTracking()
 
     listeners++
 

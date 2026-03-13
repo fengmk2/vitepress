@@ -7,5 +7,5 @@ function toDest(file) {
 
 globSync(['src/client/**']).forEach((file) => {
   if (/(\.ts|tsconfig\.json)$/.test(file)) return
-  copy(file, toDest(file))
+  void copy(file, toDest(file))
 })

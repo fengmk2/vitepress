@@ -34,8 +34,9 @@ const svg = computed(() => {
 })
 
 if (import.meta.env.SSR) {
-  typeof props.icon === 'string' &&
+  if (typeof props.icon === 'string') {
     useSSRContext<SSGContext>()?.vpSocialIcons.add(props.icon)
+  }
 }
 </script>
 

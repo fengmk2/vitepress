@@ -380,7 +380,7 @@ export async function createMarkdownRenderer(
           .apply(this, args)
           .replace(/^<mjx-container /, '<mjx-container v-pre tabindex="0" ')
       }
-    } catch (error) {
+    } catch {
       throw new Error(
         'You need to install `markdown-it-mathjax3@^4` to use math support.'
       )

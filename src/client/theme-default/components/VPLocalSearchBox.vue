@@ -255,7 +255,7 @@ const disableReset = computed(() => {
 })
 function focusSearchInput(select = true) {
   searchInput.value?.focus()
-  select && searchInput.value?.select()
+  if (select) searchInput.value?.select()
 }
 
 onMounted(() => {

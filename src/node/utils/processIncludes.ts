@@ -14,7 +14,7 @@ export function processIncludes(
   cleanUrls: boolean
 ): string {
   const includesRE = /<!--\s*@include:\s*(.*?)\s*-->/g
-  const regionRE = /(#[^\s\{]+)/
+  const regionRE = /(#[^\s{]+)/
   const rangeRE = /\{(\d*),(\d*)\}$/
 
   return src.replace(includesRE, (m: string, m1: string) => {

@@ -39,7 +39,7 @@ export function resolveAliases(root: string, ssr: boolean): AliasOptions {
     let vuePath
     try {
       vuePath = require.resolve(vueRuntimePath, { paths: [root] })
-    } catch (e) {
+    } catch {
       vuePath = require.resolve(vueRuntimePath)
     }
     aliases.push({
