@@ -105,7 +105,11 @@ export function resolveSiteDataByRoute(
   relativePath: string
 ): SiteData {
   const localeIndex = getLocaleForPath(siteData, relativePath)
-  const { label, link, ...localeConfig } = siteData.locales[localeIndex] ?? {}
+  const {
+    label: _label,
+    link: _link,
+    ...localeConfig
+  } = siteData.locales[localeIndex] ?? {}
   Object.assign(localeConfig, { localeIndex })
 
   const additionalConfigs = resolveAdditionalConfig(siteData, relativePath)
@@ -205,6 +209,7 @@ export function mergeHead(...headArrays: HeadConfig[][]): HeadConfig[] {
 
 // https://github.com/rollup/rollup/blob/fec513270c6ac350072425cc045db367656c623b/src/utils/sanitizeFileName.ts
 
+// eslint-disable-next-line no-control-regex
 const INVALID_CHAR_REGEX = /[\u0000-\u001F"#$&*+,:;<=>?[\]^`{|}\u007F]/g
 const DRIVE_LETTER_REGEX = /^[a-z]:/i
 

@@ -166,7 +166,7 @@ export function createRouter(
           ;(window as any).__VP_HASH_MAP__ = await res.json()
           await loadPage(href, { scrollPosition, isRetry: true, initialLoad })
           return
-        } catch (e) {}
+        } catch {}
       }
 
       if (latestPendingPath === pendingPath) {

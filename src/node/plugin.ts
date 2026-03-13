@@ -388,7 +388,7 @@ export async function createVitePressPlugin(
 
       if (file.endsWith('.md')) {
         const mod = this.environment.moduleGraph.getModuleById(file)
-        mod && modules.push(mod)
+        if (mod) modules.push(mod)
       }
 
       importerMap[slash(file)]?.forEach((relativePath) => {
@@ -396,7 +396,7 @@ export async function createVitePressPlugin(
         const mod = this.environment.moduleGraph.getModuleById(
           path.posix.join(srcDir, relativePath)
         )
-        mod && modules.push(mod)
+        if (mod) modules.push(mod)
       })
 
       return modules.length ? [...existingMods, ...modules] : undefined

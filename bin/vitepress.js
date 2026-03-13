@@ -13,4 +13,4 @@ try {
   }, 10 * 1000).unref()
 } catch {}
 
-import('../dist/node/cli.js')
+void import('../dist/node/cli.js')

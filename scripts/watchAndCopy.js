@@ -5,11 +5,11 @@ import { normalizePath } from 'vite'
 function toClientAndNode(method, file) {
   file = normalizePath(file)
   if (method === 'copy') {
-    copy(file, file.replace(/^src\/shared\//, 'src/node/'))
-    copy(file, file.replace(/^src\/shared\//, 'src/client/'))
+    void copy(file, file.replace(/^src\/shared\//, 'src/node/'))
+    void copy(file, file.replace(/^src\/shared\//, 'src/client/'))
   } else if (method === 'remove') {
-    remove(file.replace(/^src\/shared\//, 'src/node/'))
-    remove(file.replace(/^src\/shared\//, 'src/client/'))
+    void remove(file.replace(/^src\/shared\//, 'src/node/'))
+    void remove(file.replace(/^src\/shared\//, 'src/client/'))
   }
 }
 

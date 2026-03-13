@@ -2,7 +2,7 @@ import { defineRoutes } from 'vitepress'
 import paths from './paths'
 
 export default defineRoutes({
-  async paths(watchedFiles: string[]) {
+  async paths(_watchedFiles: string[]) {
     // console.log('watchedFiles', watchedFiles)
     return paths
   },

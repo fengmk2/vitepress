@@ -357,7 +357,7 @@ function getModules(
 ) {
   const modules: EnvironmentModuleNode[] = []
   for (const file of moduleGraph.delete(id)) {
-    deleteFromRouteModuleCache && routeModuleCache.delete(file)
+    if (deleteFromRouteModuleCache) routeModuleCache.delete(file)
     modules.push(...(envModuleGraph.getModulesByFile(file)?.values() ?? []))
   }
   return modules

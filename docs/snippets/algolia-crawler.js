@@ -13,7 +13,7 @@ new Crawler({
     {
       indexName: 'vitepress',
       pathsToMatch: ['https://vitepress.dev/**'],
-      recordExtractor: ({ $, helpers }) => {
+      recordExtractor: ({ helpers }) => {
         return helpers.docsearch({
           recordProps: {
             lvl1: '.content h1',
